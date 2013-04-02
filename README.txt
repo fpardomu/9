@@ -17,7 +17,7 @@ Create these files first and get everything to compile using stubs before you mo
 
 PART 2 - CREATE YOUR MAIN(6 POINTS)
  • You need to have a ".cpp" that contains your main() function, as well as any helper functions you may choose to create. This is NOT the same file as Player.cpp.
- • Your main should have two different vectors. The vectors will contain Player * (assuming your class was named Player). The vectors can be declared in this way: vector<Player*> vectorName; If your class is named something other than Player, that word will replace Player.
+ • Your main should have two different vectors. The vectors will contain Player * (assuming your class was named Player). The vectors can be declared in this way: vector<Player*> vectorName; If your class is named something other than Player, that word will replace Player.
  	◦ One vector (ALL PLAYERS) will be used to store all players that are added to the game.
  	◦ One vector (LINE-UP) will be used to store players that are chosen by the user from the vector containing all players. This vector will be the used as a queue, and whenever the fight option (explained below) is chosen, the next two players in this vector are to play RPS against one another and then removed from this vector.
  • Your main menu should contain these options (I would highly recommend that you make a function for each of these options):
