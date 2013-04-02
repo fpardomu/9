@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D83CEFD17028F0D00C90C14 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D83CEFC17028F0D00C90C14 /* main.cpp */; };
 		3D83CEFF17028F0D00C90C14 /* Lab9RockPaperScissors.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3D83CEFE17028F0D00C90C14 /* Lab9RockPaperScissors.1 */; };
+		3DB21C5F170AB96C00A3DB5E /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DB21C5E170AB96C00A3DB5E /* Player.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		3D83CEF917028F0D00C90C14 /* Lab9RockPaperScissors */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab9RockPaperScissors; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D83CEFC17028F0D00C90C14 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		3D83CEFE17028F0D00C90C14 /* Lab9RockPaperScissors.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Lab9RockPaperScissors.1; sourceTree = "<group>"; };
+		3DB21C5E170AB96C00A3DB5E /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		3DB21C60170AB9AF00A3DB5E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +63,9 @@
 		3D83CEFB17028F0D00C90C14 /* Lab9RockPaperScissors */ = {
 			isa = PBXGroup;
 			children = (
+				3DB21C60170AB9AF00A3DB5E /* Player.h */,
 				3D83CEFC17028F0D00C90C14 /* main.cpp */,
+				3DB21C5E170AB96C00A3DB5E /* Player.cpp */,
 				3D83CEFE17028F0D00C90C14 /* Lab9RockPaperScissors.1 */,
 			);
 			path = Lab9RockPaperScissors;
@@ -118,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D83CEFD17028F0D00C90C14 /* main.cpp in Sources */,
+				3DB21C5F170AB96C00A3DB5E /* Player.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +222,7 @@
 				3D83CF0417028F0D00C90C14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -51,7 +51,9 @@ Name1 throws rock!
 Name2 throws paper!
 
 Name2 is the winner!
-Requirement Notes
+
+
+REQUIREMENT NOTES
 
 GENERAL
  • You must have a constructor and the three specified functions and the four specified variables for your object. You are also required to use only private member variables.
