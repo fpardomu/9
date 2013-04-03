@@ -8,11 +8,12 @@
 #include "Player.h"
 using namespace std;
 //---------------------------------------------------------------------------------------
-Player::Player(string nameIn, int winsIn, int lossesIn, int drawsIn) {
+Player::Player(string nameIn) {
   name = nameIn;
-  wins = winsIn;
-  losses = lossesIn;
-  draws = drawsIn;
+  wins = 0;
+  losses = 0;
+  draws = 0;
+  matches = 0;
 }
 Player::~Player(){}
 //---------------------------------------------------------------------------------------
@@ -28,16 +29,38 @@ int Player::getLosses() {
 int Player::getDraws() {
   return draws;
 }
-//---------------------------------------------------------------------------------------
 double Player::getWinRecord() {
-  winRecord = wins / matches;
   return winRecord;
 }
 string Player::getRPSThrow() {
-  //randomize here
+//randomize here
   return throwChoice;
 }
-
+//---------------------------------------------------------------------------------------
+int Player::updateWins(int winsIn) {
+  wins = winsIn;
+  wins++; matches++;
+  updateWinRecord(winRecord);
+  return wins;
+}
+int Player::updateLosses(int lossesIn) {
+  losses = lossesIn;
+  losses++; matches++;
+  updateWinRecord(winRecord);
+  return losses;
+}
+int Player::updateDraws(int drawsIn) {
+  draws = drawsIn;
+  draws++; matches++;
+  updateWinRecord(winRecord);
+  return draws;
+}
+//---------------------------------------------------------------------------------------
+double Player::updateWinRecord(double winRecordIn) {
+  winRecordIn = winRecordIn / matches;
+  winRecord = winRecordIn; //technically dont need this line... can return winRecordIn
+  return winRecord;
+}
 //---------------------------------------------------------------------------------------
 string Player::toString() {
   stringstream ss;
