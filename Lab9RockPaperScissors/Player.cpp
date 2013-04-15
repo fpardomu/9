@@ -6,18 +6,19 @@
 //  Copyright (c) 2013 William Myers. All rights reserved.
 //
 #include "Player.h"
-using namespace std;
-//---------------------------------------------------------------------------------------
-Player::Player(string nameIn) {
+
+//*****************************************************************************************
+Player::Player(std::string nameIn) {
   name = nameIn;
   wins = 0;
   losses = 0;
   draws = 0;
   matches = 0;
+  throwNum = Player::throwRPS(); //initialize throwNum with a simulated throw
 }
 Player::~Player(){}
-//---------------------------------------------------------------------------------------
-string Player::getName() {
+//=========================================================================================
+std::string Player::getName() {
   return name;
 }
 int Player::getWins() {
@@ -32,40 +33,46 @@ int Player::getDraws() {
 double Player::getWinRecord() {
   return winRecord;
 }
-string Player::getRPSThrow() {
-//randomize here
-  return throwChoice;
+long Player::getRPSThrowNum() {
+  return throwNum;
+}
+std::string Player::getRPSThrow() {
+  return throwChoice.at(throwNum);
 }
 //---------------------------------------------------------------------------------------
-int Player::updateWins(int winsIn) {
-  wins = winsIn;
+long Player::throwRPS() {
+//  throwNum = rand() / (((RAND_MAX * 1.0)) * 3 + 1); //makes probability of each more even vs. rand()%4
+  throwNum = rand()%3; //generate psuedorandom number between 0 & 2
+//  should use std::mersenne_twister_engine, Defined in header <random> instead or boost::random_device or others
+//  std::cerr << "_ThrowNum_" << throwNum << "\n";
+  return throwNum;
+}
+//---------------------------------------------------------------------------------------
+int Player::updateWins() {
   wins++; matches++;
-  updateWinRecord(winRecord);
+  updateWinRecord();
   return wins;
 }
-int Player::updateLosses(int lossesIn) {
-  losses = lossesIn;
+int Player::updateLosses() {
   losses++; matches++;
-  updateWinRecord(winRecord);
+  updateWinRecord();
   return losses;
 }
-int Player::updateDraws(int drawsIn) {
-  draws = drawsIn;
+int Player::updateDraws() {
   draws++; matches++;
-  updateWinRecord(winRecord);
+  updateWinRecord();
   return draws;
 }
-//---------------------------------------------------------------------------------------
-double Player::updateWinRecord(double winRecordIn) {
-  winRecordIn = winRecordIn / matches;
-  winRecord = winRecordIn; //technically dont need this line... can return winRecordIn
+double Player::updateWinRecord() {
+  winRecord = wins / matches;
   return winRecord;
 }
+
 //---------------------------------------------------------------------------------------
-string Player::toString() {
-  stringstream ss;
-  ss << "Name: " << name << endl;
-	ss << "Wins: " << wins; ss << "/Losses: " << losses; ss << "/Draws: " << draws << endl;
+std::string Player::toString() {
+  std::stringstream ss;
+  ss << "Name: " << name << "\n";
+	ss << "Wins: " << wins; ss << " / Losses: " << losses; ss << " / Draws: " << draws << "\n";
   ss << "Win Record: " << winRecord;
 	return ss.str();
 }

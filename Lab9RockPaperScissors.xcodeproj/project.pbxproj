@@ -31,6 +31,7 @@
 		3D83CEFE17028F0D00C90C14 /* Lab9RockPaperScissors.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Lab9RockPaperScissors.1; sourceTree = "<group>"; };
 		3DB21C5E170AB96C00A3DB5E /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		3DB21C60170AB9AF00A3DB5E /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		3DB9F21C171B840700D19EC1 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +67,7 @@
 				3DB21C60170AB9AF00A3DB5E /* Player.h */,
 				3D83CEFC17028F0D00C90C14 /* main.cpp */,
 				3DB21C5E170AB96C00A3DB5E /* Player.cpp */,
+				3DB9F21C171B840700D19EC1 /* README.txt */,
 				3D83CEFE17028F0D00C90C14 /* Lab9RockPaperScissors.1 */,
 			);
 			path = Lab9RockPaperScissors;

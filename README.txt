@@ -45,6 +45,7 @@ PART 4 - FIGHT (8 POINTS)
  • You will then simulate a fight between these two players by having each of them simulate an RPS "throw" by using the getRPSThrow() member function. You will compare the results, and the winner will increase his number of wins statistic, and the loser will increase his number of losses statistic. In the event of a draw, each player will increase his number of draws statistic.
  • If the two players at the front of the LINE-UP are the same person, the result is an automatic draw.
  • You can design the specifics of how a fight should look, but the fight between two players might look something like this:
+
 Fight initiated between Name1 and Name2!
 
 Name1 throws rock!

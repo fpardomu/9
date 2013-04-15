@@ -8,52 +8,45 @@
 #ifndef _Player_h
 #define _Player_h
 
-#include <string>
+#include <iostream>
 #include <sstream>
 #include <vector>
-//#include <fstream>
-#include <algorithm> //for myVector.erase() & myVector.find()
-using namespace std;
-
+#include <array>
+#include <ctime>//for srand()
+//*****************************************************************************************
 class Player {
 private:
-  string name;
-  int wins;     
-  int losses;   
-  int draws;
-  int matches;
-  double winRecord;
-
-  string throwChoice;
-//-----------------------------------------------------------------------------------------
-  double updateWinRecord(double winRecordIn);
-
-//-----------------------------------------------------------------------------------------
+  std::string name; 
+  int wins; 
+  int losses; 
+  int draws; 
+  int matches; 
+  double winRecord; 
+  long throwNum; 
+  std::array<std::string, 4> throwChoice = {"rock", "paper", "scissors"};
+//=========================================================================================
 public:
-//Constructor/Destructor
-//param name player's name
-//param wins player's win count
-//param losses player's loss count
-//param draws player's draw count
-  Player(string nameIn);
+  //Constructor/Destructor
+  Player(std::string nameIn);
   virtual ~Player();
 //-----------------------------------------------------------------------------------------
-//each gets the respective variable and returns it
-  string getName();
+  std::string getName();
   int getWins();
   int getLosses();
   int getDraws();
   double getWinRecord();
-  string getRPSThrow();
-//---------------------------------------------------------------------------------------
-  int updateWins(int winsIn);
-  int updateLosses(int lossesIn);
-  int updateDraws(int drawsIn);
-//---------------------------------------------------------------------------------------
-  string toString();
-//  idk if its smart to use these bc they need object pointers from the same class to function  
-//  vector<Player*> addToList(vector<Player*> playerList, string name);
-//  vector<Player*> addToQueue(vector<Player*> queue);
+  long getRPSThrowNum();
+  std::string getRPSThrow(); //returns the name of the throw ("rock", "paper", "scissors")
+//-----------------------------------------------------------------------------------------
+  double updateWinRecord();
+  int updateWins();
+  int updateLosses();
+  int updateDraws();
+  long throwRPS();//simulates a throw by randomly "choosing" a number 0,1,2
+//-----------------------------------------------------------------------------------------
+  std::string toString();
+//*****************************************************************************************
+
 
 };
 #endif
