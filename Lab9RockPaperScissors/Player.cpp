@@ -14,20 +14,20 @@ Player::Player(std::string nameIn) {
   losses = 0;
   draws = 0;
   matches = 0;
-  throwNum = Player::throwRPS(); //initialize throwNum with a simulated throw
+  throwNum = 0;
 }
 Player::~Player(){}
 //=========================================================================================
 std::string Player::getName() {
   return name;
 }
-int Player::getWins() {
+double Player::getWins() {
   return wins;
 }
-int Player::getLosses() {
+double Player::getLosses() {
   return losses;
 }
-int Player::getDraws() {
+double Player::getDraws() {
   return draws;
 }
 double Player::getWinRecord() {
@@ -48,17 +48,17 @@ long Player::throwRPS() {
   return throwNum;
 }
 //---------------------------------------------------------------------------------------
-int Player::updateWins() {
+double Player::updateWins() {
   wins++; matches++;
   updateWinRecord();
   return wins;
 }
-int Player::updateLosses() {
+double Player::updateLosses() {
   losses++; matches++;
   updateWinRecord();
   return losses;
 }
-int Player::updateDraws() {
+double Player::updateDraws() {
   draws++; matches++;
   updateWinRecord();
   return draws;
@@ -71,8 +71,9 @@ double Player::updateWinRecord() {
 //---------------------------------------------------------------------------------------
 std::string Player::toString() {
   std::stringstream ss;
-  ss << "Name: " << name << "\n";
-	ss << "Wins: " << wins; ss << " / Losses: " << losses; ss << " / Draws: " << draws << "\n";
-  ss << "Win Record: " << winRecord;
+  ss << "Name: " << name;
+	ss << "\nWins: " << wins; ss << " | Losses: " << losses; ss << " | Draws: " << draws;
+  ss << "\nMatches played: " << matches;
+  ss << "\nWin Record: " << winRecord;
 	return ss.str();
 }

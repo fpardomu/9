@@ -82,6 +82,7 @@ bool fight (std::vector<Player*>& queue) {
     return false;
   }
   else {
+    queue[0] -> throwRPS(); queue[1] -> throwRPS(); //simulate a throw
     std::cout << "\n" << queue[0] -> getName() << " threw " << queue[0] -> getRPSThrow() << "\n";
     std::cout << queue[1] -> getName() << " threw " << queue[1] -> getRPSThrow() << "\n\n";
     //calculate the winner and update stats

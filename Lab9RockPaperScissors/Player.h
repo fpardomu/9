@@ -17,10 +17,10 @@
 class Player {
 private:
   std::string name; 
-  int wins; 
-  int losses; 
-  int draws; 
-  int matches; 
+  double wins;
+  double losses;
+  double draws;
+  double matches; 
   double winRecord; 
   long throwNum; 
   std::array<std::string, 4> throwChoice = {"rock", "paper", "scissors"};
@@ -31,17 +31,17 @@ public:
   virtual ~Player();
 //-----------------------------------------------------------------------------------------
   std::string getName();
-  int getWins();
-  int getLosses();
-  int getDraws();
+  double getWins();
+  double getLosses();
+  double getDraws();
   double getWinRecord();
   long getRPSThrowNum();
   std::string getRPSThrow(); //returns the name of the throw ("rock", "paper", "scissors")
 //-----------------------------------------------------------------------------------------
   double updateWinRecord();
-  int updateWins();
-  int updateLosses();
-  int updateDraws();
+  double updateWins();
+  double updateLosses();
+  double updateDraws();
   long throwRPS();//simulates a throw by randomly "choosing" a number 0,1,2
 //-----------------------------------------------------------------------------------------
   std::string toString();
