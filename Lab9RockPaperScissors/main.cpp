@@ -80,6 +80,11 @@ bool fight (std::vector<Player*>& queue) {
   if (queue.size() <= 1) {
     std::cout << "\nMust have at least two players to start the fight";
     return false;
+  } 
+//  should just call searchList on the queue and not allow to add the same person (which is what I did before but this is the lab)
+  else if (queue[0] ->getName() == queue[1] -> getName()) {
+    std::cout << "Automatic draw " << queue[0] -> getName() << " can't fight themselves.";
+    queue[0] -> updateDraws();
   }
   else {
     queue[0] -> throwRPS(); queue[1] -> throwRPS(); //simulate a throw
@@ -104,7 +109,7 @@ bool fight (std::vector<Player*>& queue) {
         break;
     }
   }
-  queue.erase(queue.begin(), queue.begin()+2); //removes the first two players from queue
+  queue.erase(queue.begin(), queue.begin()+2); //removes the players that just fought from the queue 
   return true;
 }
 //=========================================================================================

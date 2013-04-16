@@ -31,14 +31,14 @@ PART 3 - CREATE YOUR PLAYER (11 POINTS)
  • You need to create a Player class, which has (as stated above) both a ".h" and a ".cpp" file to go with it. Your Player class is required to have certain functions to perform specific tasks. Your Player class should have the following:
 	 ◦ A constructor that can accept a string (name).  Your constructor may accept more parameters if you desire.
 	 ◦ Private member variables to store the fighters:
- 		• name
+      • name
  	   	• number of wins
  	   	• number of losses
  	   	• number of draws
  ◦ Different member functions to perform these tasks:
  		• getRPSThrow() - Randomize the selection of choosing rock, paper or scissors, and return the chosen "throw".
 		• getWinRecord() - Get the player's win record, which should be the number of wins / all matches that player has fought in (should return a double).
- 	   • toString() - Will return a string that has all of the information about the player. This will be very helpful for debugging the program.
+    • toString() - Will return a string that has all of the information about the player. This will be very helpful for debugging the program.
 
 PART 4 - FIGHT (8 POINTS)
  • You will take the first two players out of the LINE-UP vector. You must verify that there are at least two players in the vector before you begin a fight.
